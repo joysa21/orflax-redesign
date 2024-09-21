@@ -29,7 +29,7 @@ const QuickSearch = ({ isVisible }: { isVisible: boolean }) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: isVisible ? 'auto' : 0, opacity: isVisible ? 1 : 0 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="center bg-secondaryGray shadow-lg rounded-lg p-4 z-20 mt-2 w-[82%] ml-24"
+            className="absolute center bg-secondaryGray shadow-lg rounded-lg p-4 z-20 mt-12 ml-24 w-[80vw]"
         >
             <h2 className="text-primaryBlack font-bold mb-4">Quick Search</h2>
             <div className="flex flex-wrap gap-4">

@@ -28,20 +28,19 @@ const menuItems: MenuItem[] = [
     { name: 'Innovation', subItems: [] },
 ];
 
-const Menu = () => {
-    const [isOpen, setIsOpen] = useState(false);
+const Menu = ({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setIsMenuOpen: (isMenuOpen: boolean) => void }) => {
     const [selectedItem, setSelectedItem] = useState<MenuItem | null>(menuItems[0]);
     const navigate = useNavigate(); // Replace useHistory with useNavigate
 
     const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+        setIsMenuOpen(!isMenuOpen);
+        };
 
     useEffect(() => {
-        if (isOpen) {
+        if (isMenuOpen) {
             setSelectedItem(menuItems[0]);
         }
-    }, [isOpen]);
+    }, [isMenuOpen, setIsMenuOpen]);
 
     const handleItemClick = (item: MenuItem) => {
         setSelectedItem(item);
@@ -53,15 +52,15 @@ const Menu = () => {
 
     return (
         <div>
-            <button onClick={toggleMenu} className="text-secondaryGray">
-                {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            <button onClick={toggleMenu} className="text-secondaryGray mt-[0.2rem]">
+                {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
-            {isOpen && (
+            {isMenuOpen && (
                 <motion.div
                     initial={{ height: 0 }}
-                    animate={{ height: '100vh' }}
+                    animate={{ height: '92vh' }}
                     transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    className="absolute left-0 w-full bg-primaryBlack opacity-95 text-secondaryGray z-50"
+                    className="absolute left-0 w-full top-16 bg-primaryBlack text-secondaryGray z-50"
                 >
                     <div className="flex mx-4 h-full">
                         <div className="w-1/3 p-4">

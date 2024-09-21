@@ -3,9 +3,15 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        'primary': ['Protest Guerrilla', 'sans-serif'],
+        'secondary': ['Arial', 'sans-serif'], // Replace with your secondary font
+      },
       colors: {
-        'primary': '#1e40af',
-        'secondary': '#d32f2f',
+        'primaryBlack': '#0D1B2A',
+        'highlightYellow': '#FFC12C',
+        'secondaryGray': '#CEE5F2',
+        'primaryGray': '#1F2938',
       },
     },
     
