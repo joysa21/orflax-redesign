@@ -2,6 +2,12 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+$primary-black: #0D1B2A;
+$highlight-yellow: #FFC12C;
+$secondary-gray: #CEE5F2;
+$primary-gray: #767B91;
+
 *,
 *::before,
 *::after {

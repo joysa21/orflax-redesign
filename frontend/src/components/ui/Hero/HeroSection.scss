@@ -1,13 +1,15 @@
 .hero {
-    background-image: url('../../../assets/images/heroImage3.jpg');
-    height: 70vh;
+    background: linear-gradient(111deg, rgba(0,0,0,1) 0%, rgba(3,95,143,1) 69%, rgba(206,229,242,1) 100%);
+    background-size: cover, contain;
+    background-position: center, right;
+    height: 70vh; // Make the hero section full height
     position: relative;
-  
+    margin-top: 0; // Ensure it starts from the top
+
     .overlay {
       position: absolute;
       inset: 0;
-      background-color: #0D1A2B;
-      opacity: 0.65;
+      background-color: rgba(13, 26, 43, 0.65); // Use rgba for opacity
     }
   
     .container {
