@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../../assets/images/oipl_icon.png';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -10,6 +11,7 @@ const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isQuickSearchVisible, setIsQuickSearchVisible] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleSearch = () => {
         setIsSearchOpen(!isSearchOpen);
@@ -24,7 +26,7 @@ const Header = () => {
         <header className={`relative w-full flex flex-col items-center py-4 ${isMenuOpen ? 'bg-primaryBlack' : 'bg-transparent'} text-secondaryGray z-10 px-4 relative ${styles.header}`}>
             <div className="w-full flex justify-between items-center">
                 <div className="logo">
-                    <img src={logo} alt="Orflax Logo" className="h-10" />
+                    <img src={logo} alt="Orflax Logo" className="h-10" onClick={() => navigate('/')}/>
                 </div>
                 <div className="flex items-center space-x-6 flex-grow mr-6 ">
                     <div className="flex-grow flex justify-end items-center space-x-6 ">

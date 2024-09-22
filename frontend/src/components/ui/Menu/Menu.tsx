@@ -10,22 +10,28 @@ const menuItems: MenuItem[] = [
         { name: 'Our legacy', link: '/who-we-are/our-legacy' },
         { name: 'Our story', link: '/who-we-are/our-story' },
         { name: 'Our vision', link: '/who-we-are/our-vision' },
-        { name: 'Our leadership', link: '/who-we-are/our-leadership' },
-        { name: 'Company resource center', link: '/who-we-are/company-resource-center' }
     ]},
     { name: 'What we do', subItems: [
-        { name: 'Our legacy', link: '/what-we-do/our-legacy' },
-        { name: 'Our vision', link: '/what-we-do/our-vision' },
-        { name: 'Our leadership', link: '/what-we-do/our-leadership' }
+        { name: 'Our Products', link: '/what-we-do/our-products' },
+        { name: 'Consultation', link: '/what-we-do/consultation' },
+        { name: 'Custom Manufacturing', link: '/what-we-do/custom-manufacturing' }
     ]},
-    { name: 'Investors', subItems: [
-        { name: 'Lorem Ipsum', link: '/investors/lorem-ipsum' }
+    { name: 'Leadership and Team', subItems: [
+        { name: 'Board of Directors', link: '/leadership-and-team/board-of-directors' },
+        { name: 'Message from Team', link: '/leadership-and-team/message-from-team' },
     ]},
-    { name: 'News and Media', subItems: [] },
-    { name: 'Sustainability', subItems: [] },
-    { name: 'Community', subItems: [] },
-    { name: 'People', subItems: [] },
-    { name: 'Innovation', subItems: [] },
+    { name: 'Resources', subItems: [
+        { name: 'Bulk Savings Calculator', link: '/tools-and-resources/bulk-savings-calculator' },
+        { name: 'Frequently Asked Questions', link: '/tools-and-resources/frequently-asked-questions' },
+        { name: 'Sustainability', link: '/tools-and-resources/sustainability' },
+    ] },
+    { name: 'Contact Us', subItems: [
+        { name: 'Live Chat', link: '/contact-us/live-chat' },
+        { name: 'Enquiry Form', link: '/contact-us/enquiry-form' },
+        { name: 'Connect with us', link: '/contact-us/connect-with-us' },
+        { name: 'Find us on maps', link: '/contact-us/find-us-on-maps' },
+
+    ] },
 ];
 
 const Menu = ({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setIsMenuOpen: (isMenuOpen: boolean) => void }) => {

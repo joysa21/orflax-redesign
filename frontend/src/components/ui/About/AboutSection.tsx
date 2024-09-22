@@ -1,10 +1,14 @@
-
 import aboutImage from '../../../assets/images/aboutUsImage.png';
+import Button from '../Button/Button';
+
+import { useNavigate } from 'react-router-dom';
 
 const AboutSection = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="about-section mx-auto py-16 px-4 flex items-center bg-secondaryGray">
-      <div className="about-image-container flex-shrink-0 mr-8">
+    <div className="about-section relative mx-auto pt-16 pb-32 px-8 flex flex-col lg:flex-row items-center bg-secondaryGray">
+      <div className="about-image-container flex-shrink-0 mb-8 lg:mb-0 lg:mr-8 hidden lg:block">
         <img src={aboutImage} alt="About Orflax" className="about-image object-cover h-[400px] w-[400px]" />
       </div>
       <div className="about-content">
@@ -24,6 +28,9 @@ const AboutSection = () => {
         We are a North India based business group with wide range of copper and aluminium wires & cables.
         </p>
       </div>
+      <div className="absolute bottom-12 left-[32%] ">
+          <Button text="Know More" onClick={() => navigate('/about')} />
+        </div>
     </div>
   );
 };

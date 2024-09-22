@@ -7,6 +7,7 @@ const HeroSection = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const heroImage = document.querySelector('.hero-image');
+      const underline = document.querySelector('.underline');
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
 
@@ -15,6 +16,10 @@ const HeroSection = () => {
 
       if (heroImage) {
         (heroImage as HTMLElement).style.transform = `translate(${moveX / 2}px, ${moveY / 2}px)`;
+      }
+
+      if (underline) {
+        (underline as HTMLElement).style.transform = `translateX(${moveX}px)`;
       }
     };
 
@@ -32,10 +37,11 @@ const HeroSection = () => {
       <Header />
       <section className="relative">
       <div className="container left-0 ml-8 mt-40 text-left relative z-10">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-secondary">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-secondary relative">
           Engineering the
+          <div className="underline"></div>
         </h1>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-secondary">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-2 font-secondary">
           future with every
         </h1>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-highlightYellow font-secondary">cable</h1>
