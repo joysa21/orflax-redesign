@@ -9,11 +9,17 @@ const InfoSection = () => {
   const quotes = ["Performance and Reliability", "Best Quality", "Technologically Advanced", 'Customer Satisfaction'];
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Error attempting to play", error);
-      });
-    }
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          await videoRef.current.play();
+        } catch (error) {
+          console.error("Error attempting to play", error);
+        }
+      }
+    };
+
+    playVideo();
 
     const quoteInterval = setInterval(() => {
       setCurrentQuoteIndex((prevIndex) => (prevIndex + 1) % quotes.length);
@@ -36,7 +42,14 @@ const InfoSection = () => {
         <img src={madeInIndiaLogo} alt="Hero" className="object-fit" />
       </div>
       <div className="box">
-        <video ref={videoRef} className="w-full h-full object-cover" autoPlay loop>
+        <video 
+          ref={videoRef} 
+          className="w-full h-full object-cover" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
           <source src={sampleVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
